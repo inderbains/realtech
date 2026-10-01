@@ -34,3 +34,8 @@ Recommended: GitHub -> Vercel. Your MariaDB must accept connections from the dep
 This package intentionally reads your **existing schema** first. That allows staged migration from PHP without forcing a risky one-day database cutover. Write actions and the more complex workflow engines should be migrated module-by-module and tested against a staging database before changing production traffic.
 
 See `docs/MIGRATION.md`, `docs/FEATURE-MAP.md`, and `docs/SECURITY.md`.
+
+
+## Hostinger compatibility
+
+This package is pinned to Next.js 15 for compatibility with Hostinger environments that expose an older GLIBC runtime. mysql2 includes its own TypeScript definitions; do not install @types/mysql2.
