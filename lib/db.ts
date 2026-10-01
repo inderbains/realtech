@@ -26,7 +26,7 @@ export async function rows<T extends RowDataPacket[] = RowDataPacket[]>(
   sql: string,
   params: unknown[] = [],
 ): Promise<T> {
-  const [result] = await db.execute<T>(sql, params);
+  const [result] = await db.execute<T>(sql, params as any);
   return result;
 }
 
