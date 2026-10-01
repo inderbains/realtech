@@ -1,0 +1,1 @@
+export default function PageHeader({title,subtitle,actions}:{title:string;subtitle?:string;actions?:React.ReactNode}){return <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:15,marginBottom:20}}><div><h1 className="title">{title}</h1>{subtitle&&<div className="muted">{subtitle}</div>}</div>{actions}</div>}

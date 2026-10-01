@@ -1,0 +1,1 @@
+export default function Stat({label,value,detail}:{label:string;value:any;detail?:string}){return <div className="card stat"><span className="muted">{label}</span><b>{value}</b>{detail&&<small className="muted">{detail}</small>}</div>}

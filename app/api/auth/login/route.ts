@@ -1,0 +1,2 @@
+import { NextResponse } from "next/server";import { authenticate,signSession } from "@/lib/auth";
+export async function POST(req:Request){const {login,password}=await req.json();const u=await authenticate(String(login||""),String(password||""));if(!u)return NextResponse.json({ok:false},{status:401});const token=await signSession(u);const res=NextResponse.json({ok:true,user:u});res.cookies.set("mrd_session",token,{httpOnly:true,sameSite:"lax",secure:process.env.NODE_ENV==="production",path:"/",maxAge:60*60*24*7});return res;}
