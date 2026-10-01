@@ -34,6 +34,6 @@ export async function exec(
   sql: string,
   params: unknown[] = [],
 ): Promise<ResultSetHeader> {
-  const [result] = await db.execute<ResultSetHeader>(sql, params);
+  const [result] = await db.execute<ResultSetHeader>(sql, params as any);
   return result;
 }
